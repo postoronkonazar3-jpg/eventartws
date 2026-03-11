@@ -38,6 +38,10 @@ const Hero = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
+        onClick={() => {
+          const element = document.getElementById('contacts');
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }}
         className="border-2 border-white px-12 py-4 text-lg font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 rounded-lg mb-12"
       >
         ЗАМОВИТИ ПОДІЮ
