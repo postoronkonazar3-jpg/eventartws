@@ -9,7 +9,7 @@ const Navbar = () => (
     <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest opacity-80">
       <Link href="/#services" className="hover:opacity-100 transition-opacity">послуги</Link>
       <Link href="/gallery" className="hover:opacity-100 transition-opacity">галерея</Link>
-      <Link href="/#contacts" className="hover:opacity-100 transition-opacity">контактна інформація</Link>
+      <Link href="/#contacts" className="hover:opacity-100 transition-opacity">замовити подію</Link>
     </div>
   </nav>
 );

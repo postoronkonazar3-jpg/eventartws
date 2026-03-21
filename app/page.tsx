@@ -83,7 +83,7 @@ const Services = () => {
     },
     { 
       title: 'Результативна конференція', 
-      video: 'https://res.cloudinary.com/daq51lz0x/video/upload/v1772670818/6163252_Journalist_Audience_Sitting_Politician_By_Frame_Stock_Footage_Artlist_HD_siemnv.mp4', 
+      video: 'https://res.cloudinary.com/daq51lz0x/video/upload/v1773671321/857150-hd_1920_746_30fps_obnybo.mp4', 
       desc: 'Організація кейтерингу, професійне обладнання, технічний продакшн, трансфер, підбір локації.',
       details: 'Професіоналізм у кожній деталі бізнес-події. Ми забезпечуємо повний технічний продакшн, синхронний переклад, онлайн-трансляції, реєстрацію учасників та логістику. Наш кейтеринг відповідає найвищим стандартам, а вибір локацій дозволяє провести захід будь-якого формату — від стратегічної сесії до міжнародного форуму.'
     },
@@ -95,7 +95,7 @@ const Services = () => {
     },
     { 
       title: 'Захоплюючий фестиваль', 
-      video: 'https://res.cloudinary.com/daq51lz0x/video/upload/v1772670829/6542667_Crowd_Hands_Party_Lights_By_Danil_Rudenko_Artlist_HD_mgazdv.mp4', 
+      video: 'https://res.cloudinary.com/daq51lz0x/video/upload/v1773671321/11999035_1920_1080_25fps_ubyoja.mp4', 
       desc: 'Професійний звук, світлове шоу, фото та відеограф, анімація, координатори.',
       details: 'Масштабні події потребують масштабного підходу. Ми маємо досвід в організації фестивалів та концертів під відкритим небом та у великих залах. Забезпечуємо потужний звук, складні світлові інсталяції, роботу великої команди координаторів та безпеку учасників. Ми створюємо атмосферу драйву та єдності.'
     },
@@ -122,10 +122,10 @@ const Services = () => {
                 muted
                 playsInline
                 preload="auto"
+                src={s.video}
+                onLoadedMetadata={(e) => (e.currentTarget.muted = true)}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              >
-                <source src={s.video} type="video/mp4" />
-              </video>
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
                 <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tighter mb-2">{s.title}</h3>
@@ -205,10 +205,10 @@ const Services = () => {
                   loop
                   muted
                   playsInline
+                  src={selectedService.video}
+                  onLoadedMetadata={(e) => (e.currentTarget.muted = true)}
                   className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={selectedService.video} type="video/mp4" />
-                </video>
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent md:bg-gradient-to-r" />
               </div>
 
@@ -368,7 +368,7 @@ const ContactSection = () => {
 
   return (
     <section id="contacts" className="py-24 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-24">
+      <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
           Більше, ніж свято. Більше, ніж шоу. <br />
           Давайте створимо магію разом — <br />
@@ -376,37 +376,10 @@ const ContactSection = () => {
         </h2>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div className="space-y-12">
-          <h3 className="text-4xl font-bold uppercase tracking-tighter">ГОТОВІ ДО НЕЗАБУТНІХ СПОГАДІВ?</h3>
-          
-          <div className="flex gap-6">
-            <a href="#" className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:bg-pink-500 hover:text-white transition-colors">
-              <Instagram size={28} />
-            </a>
-            <a href="#" className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:bg-pink-500 hover:text-white transition-colors">
-              <Send size={28} />
-            </a>
-          </div>
-          
-          <div className="space-y-6 text-xl">
-            <div className="flex items-center gap-4">
-              <MapPin className="text-pink-500" />
-              <span>М. Київ, вул Хрещатик 9</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Phone className="text-pink-500" />
-              <span>+380972385685</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Mail className="text-pink-500" />
-              <span>atmevents@gmail.com</span>
-            </div>
-          </div>
-        </div>
-        
+      <div className="max-w-2xl mx-auto">
         <div className="bg-white p-10 rounded-[40px] text-black shadow-2xl">
-          <h4 className="text-2xl font-bold text-center mb-8">Залишіть свої контакти і ми з вами зв&apos;яжемось</h4>
+          <h4 className="text-2xl font-bold text-center mb-8 uppercase tracking-tighter">ГОТОВІ ДО НЕЗАБУТНІХ СПОГАДІВ?</h4>
+          <p className="text-center mb-8 opacity-60">Залишіть свої контакти і ми з вами зв&apos;яжемось</p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input 
               name="name"
